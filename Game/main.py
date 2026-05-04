@@ -3,7 +3,7 @@ import pygame.image
 import pygame.transform
 import json
 import pygame.sprite
-# import Test_hero
+
 pygame.init()   # Инициализация кода (включение)
 
 width = 800
@@ -38,8 +38,6 @@ def reset_level():
         world_data = json.load(file)
     world = World(world_data)
     return world
-#pl1_image= pygame.image.load('img_sprite/player1.png')
-#pl1_rect = pl1_image.get_rect()
 class Hero:
     def __init__ (self, name):
         self.name = name
@@ -238,7 +236,6 @@ while run:
             run = False
             level = 1
             world = reset_level()
-     #display.blit(pl1_image, pl1_rect)
     else:
         world.draw()
         lava_group.draw(display)
@@ -254,7 +251,6 @@ while run:
             sound_game_over.play()
             if restart_button.draw():
                 player = Player()
-                #world = World(world_data)
                 world = reset_level()
                 game_over = 0
 
